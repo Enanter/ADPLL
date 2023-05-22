@@ -9,6 +9,7 @@ UWT Capstone Project.
   
 
 ## Architecture and Design 
+
 ![alt text](https://github.com/Enanter/ADPLL/blob/main/pictures/ADPLLFINAL.jpg)
   Our ADPLL design has feed forward design, which is unique design for a PLL. It uses one-shot to trigger the ring oscillator. Even if the input frequency is disconnected, our ADPLL can generate outputs. 
   The design archtecture has 5 different modules written in systemverilog: Top level module, Ring Oscillator with one-shot trigger, Frequency Ratio, Target multiplier, Target Frequency, and Divider. Each modules may have sub-modules.
@@ -27,12 +28,15 @@ UWT Capstone Project.
 
   ### Simluation Result
   We tested each modules and the top level module. It worked perfect as we designed. We had to implement Number Divider module(long division) to divide numbers.
+  
   ![alt text](https://github.com/Enanter/ADPLL/blob/main/pictures/divider%20some%20decimal%20for3_00.jpg)
   The Divider module generates 3 times faster than the input frequency(F_output). F_input is the Ring Oscillator frequency.
 ## Hardware Emulation
   We used Terasic Cyclone V GX FPGA and Tektronix MSO 2024 Oscilloscope. Due to physical limitaion(propagation delay), the phase is not always matching.
+  
   ![alt text](https://github.com/Enanter/ADPLL/blob/main/pictures/targetF.png)
   A 99 Kilohertz input being multiplied by a factor of 11. resulting in a period of 955.4 ns, or 1.046 Mhz 
+  
   ![alt text](https://github.com/Enanter/ADPLL/blob/main/pictures/targetM.png)
   We targeted 2.1 Mhz, and were able to generate a clock with a frequency of 2.24 Mhz
   ### Sponsor Feedback
