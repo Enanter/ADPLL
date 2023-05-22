@@ -1,0 +1,913 @@
+Analysis & Synthesis report for ADPLL_5_3
+Thu May 18 15:36:34 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0
+ 13. Source assignments for ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1
+ 14. Parameter Settings for User Entity Instance: ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0
+ 15. Parameter Settings for User Entity Instance: ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1
+ 16. Parameter Settings for User Entity Instance: ADPLL:Unit1|Freq_ratioA:Crystal_Input
+ 17. Parameter Settings for User Entity Instance: ADPLL:Unit1|Freq_ratioA:Ring_Input
+ 18. Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT1
+ 19. Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT2
+ 20. Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT3
+ 21. Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT4
+ 22. Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2
+ 23. Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalOne
+ 24. Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalTwo
+ 25. Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalOne
+ 26. Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalTwo
+ 27. Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Mod0
+ 28. Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Div0
+ 29. Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Mod1
+ 30. Port Connectivity Checks: "ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalTwo"
+ 31. Port Connectivity Checks: "ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalOne"
+ 32. Port Connectivity Checks: "ADPLL:Unit1|Controller:Process|Number_Division:DUT4"
+ 33. Port Connectivity Checks: "ADPLL:Unit1|Controller:Process|Number_Division:DUT3"
+ 34. Port Connectivity Checks: "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|DFF1:unit0"
+ 35. Port Connectivity Checks: "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0"
+ 36. Port Connectivity Checks: "User_Input:Unit2|Decoder:Unit2"
+ 37. Port Connectivity Checks: "User_Input:Unit2|Decoder:Unit1"
+ 38. Post-Synthesis Netlist Statistics for Top Partition
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
+ 41. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu May 18 15:36:34 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; ADPLL_5_3                                   ;
+; Top-level Entity Name           ; ADPLL_5_3                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 349                                         ;
+; Total pins                      ; 68                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 20                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
+; Top-level entity name                                                           ; ADPLL_5_3          ; ADPLL_5_3          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+; TargetController.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/TargetController.sv        ;         ;
+; Freq_ratioA.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Freq_ratioA.sv             ;         ;
+; User_Input.v                     ; yes             ; User Verilog HDL File        ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v               ;         ;
+; ringOscillator.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ringOscillator.sv          ;         ;
+; Ring.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv                    ;         ;
+; oneShot.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv                 ;         ;
+; Number_Division.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Number_Division.sv         ;         ;
+; Divider.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Divider.sv                 ;         ;
+; DFF1.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/DFF1.sv                    ;         ;
+; Decoder.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Decoder.sv                 ;         ;
+; Controller.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv              ;         ;
+; APDLL.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv                   ;         ;
+; ADPLL_5_3.v                      ; yes             ; User Verilog HDL File        ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                               ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                           ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                ;         ;
+; db/lpm_divide_82m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/lpm_divide_82m.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_sse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/alt_u_div_sse.tdf       ;         ;
+; db/lpm_divide_5am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/lpm_divide_5am.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 8573        ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 16987       ;
+;     -- 7 input functions                    ; 4           ;
+;     -- 6 input functions                    ; 143         ;
+;     -- 5 input functions                    ; 74          ;
+;     -- 4 input functions                    ; 5820        ;
+;     -- <=3 input functions                  ; 10946       ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 349         ;
+;                                             ;             ;
+; I/O pins                                    ; 68          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 20          ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[4]~input ;
+; Maximum fan-out                             ; 142         ;
+; Total fan-out                               ; 63124       ;
+; Average fan-out                             ; 3.60        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                   ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ADPLL_5_3                                ; 16987 (41)          ; 349 (33)                  ; 0                 ; 20         ; 68   ; 0            ; |ADPLL_5_3                                                                                                                  ; ADPLL_5_3           ; work         ;
+;    |ADPLL:Unit1|                          ; 16686 (42)          ; 211 (0)                   ; 0                 ; 20         ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1                                                                                                      ; ADPLL               ; work         ;
+;       |Controller:Process|                ; 7444 (78)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Controller:Process                                                                                   ; Controller          ; work         ;
+;          |Number_Division:DUT1|           ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Controller:Process|Number_Division:DUT1                                                              ; Number_Division     ; work         ;
+;          |Number_Division:DUT2|           ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Controller:Process|Number_Division:DUT2                                                              ; Number_Division     ; work         ;
+;          |Number_Division:DUT3|           ; 1550 (1550)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Controller:Process|Number_Division:DUT3                                                              ; Number_Division     ; work         ;
+;          |Number_Division:DUT4|           ; 1550 (1550)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Controller:Process|Number_Division:DUT4                                                              ; Number_Division     ; work         ;
+;       |Divider:first|                     ; 168 (168)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Divider:first                                                                                        ; Divider             ; work         ;
+;       |Divider:second|                    ; 168 (168)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Divider:second                                                                                       ; Divider             ; work         ;
+;       |Freq_ratioA:Crystal_Input|         ; 67 (67)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Crystal_Input                                                                            ; Freq_ratioA         ; work         ;
+;       |Freq_ratioA:Ring_Input|            ; 68 (68)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Ring_Input                                                                               ; Freq_ratioA         ; work         ;
+;       |Ring:RingGenerate|                 ; 5 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Ring:RingGenerate                                                                                    ; Ring                ; work         ;
+;          |oneShot:DUT0|                   ; 2 (2)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0                                                                       ; oneShot             ; work         ;
+;             |DFF1:unit0|                  ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|DFF1:unit0                                                            ; DFF1                ; work         ;
+;          |ringOscillator:DUT1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1                                                                ; ringOscillator      ; work         ;
+;       |TargetController:Process2|         ; 8724 (192)          ; 0 (0)                     ; 0                 ; 14         ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|TargetController:Process2                                                                            ; TargetController    ; work         ;
+;          |Number_Division:fltFinalOne|    ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalOne                                                ; Number_Division     ; work         ;
+;          |Number_Division:fltFinalTwo|    ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalTwo                                                ; Number_Division     ; work         ;
+;          |Number_Division:intFinalOne|    ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalOne                                                ; Number_Division     ; work         ;
+;          |Number_Division:intFinalTwo|    ; 2133 (2133)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalTwo                                                ; Number_Division     ; work         ;
+;    |User_Input:Unit2|                     ; 260 (106)           ; 105 (105)                 ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2                                                                                                 ; User_Input          ; work         ;
+;       |Decoder:Unit1|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|Decoder:Unit1                                                                                   ; Decoder             ; work         ;
+;       |Decoder:Unit2|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|Decoder:Unit2                                                                                   ; Decoder             ; work         ;
+;       |lpm_divide:Div0|                   ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_5am:auto_generated|  ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Div0|lpm_divide_5am:auto_generated                                                   ; lpm_divide_5am      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Div0|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_sse:divider|    ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Div0|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; alt_u_div_sse       ; work         ;
+;       |lpm_divide:Mod0|                   ; 53 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_82m:auto_generated|  ; 53 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod0|lpm_divide_82m:auto_generated                                                   ; lpm_divide_82m      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 53 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod0|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_sse:divider|    ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod0|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; alt_u_div_sse       ; work         ;
+;       |lpm_divide:Mod1|                   ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_82m:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod1|lpm_divide_82m:auto_generated                                                   ; lpm_divide_82m      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod1|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_sse:divider|    ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ADPLL_5_3|User_Input:Unit2|lpm_divide:Mod1|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; alt_u_div_sse       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 10          ;
+; Independent 18x18 plus 36       ; 6           ;
+; Sum of two 18x18                ; 2           ;
+; Independent 27x27               ; 2           ;
+; Total number of DSP blocks      ; 20          ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 22          ;
++---------------------------------+-------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 349   ;
+; Number of registers using Synchronous Clear  ; 208   ;
+; Number of registers using Synchronous Load   ; 14    ;
+; Number of registers using Asynchronous Clear ; 145   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 208   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------+
+; Inverted Register Statistics                                      ;
++---------------------------------------------------------+---------+
+; Inverted Register                                       ; Fan out ;
++---------------------------------------------------------+---------+
+; ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|DFF1:unit0|Q ; 2       ;
+; ADPLL:Unit1|Freq_ratioA:Crystal_Input|combReset         ; 1       ;
+; ADPLL:Unit1|Freq_ratioA:Ring_Input|combReset            ; 1       ;
+; Total number of inverted registers = 3                  ;         ;
++---------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |ADPLL_5_3|User_Input:Unit2|Display[5]                           ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Ring_Input|ringCounter[6]     ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Ring_Input|ringCounter[29]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Crystal_Input|ringCounter[2]  ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Freq_ratioA:Crystal_Input|ringCounter[20] ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Divider:first|count_p[15]                 ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |ADPLL_5_3|ADPLL:Unit1|Divider:second|count_p[8]                 ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |ADPLL_5_3|User_Input:Unit2|Whole_1[2]                           ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |ADPLL_5_3|User_Input:Unit2|Whole_2[3]                           ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |ADPLL_5_3|User_Input:Unit2|Dec_1[1]                             ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |ADPLL_5_3|User_Input:Unit2|Dec_2[6]                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Source assignments for ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0 ;
++------------------------------+-------+------+---------------------+
+; Assignment                   ; Value ; From ; To                  ;
++------------------------------+-------+------+---------------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; X                   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; X                   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Reset               ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Reset               ;
++------------------------------+-------+------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Source assignments for ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1 ;
++------------------------------+-------+------+----------------------------+
+; Assignment                   ; Value ; From ; To                         ;
++------------------------------+-------+------+----------------------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; inverter[2]                ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; inverter[2]                ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; inverter[1]                ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; inverter[1]                ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; inverter[0]                ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; inverter[0]                ;
++------------------------------+-------+------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0              ;
++-------------------+------------------------------------------------------------------+---------------+
+; Parameter Name    ; Value                                                            ; Type          ;
++-------------------+------------------------------------------------------------------+---------------+
+; propogation_delay ; 0000000000000000000000000000000000000000000000000000000000111100 ; Signed Binary ;
++-------------------+------------------------------------------------------------------+---------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1       ;
++-------------------+------------------------------------------------------------------+---------------+
+; Parameter Name    ; Value                                                            ; Type          ;
++-------------------+------------------------------------------------------------------+---------------+
+; propogation_delay ; 0000000000000000000000000000000000000000000000000000000000011110 ; Signed Binary ;
++-------------------+------------------------------------------------------------------+---------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Freq_ratioA:Crystal_Input ;
++----------------+---------+---------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                    ;
++----------------+---------+---------------------------------------------------------+
+; phaseAvg       ; 1100100 ; Unsigned Binary                                         ;
++----------------+---------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Freq_ratioA:Ring_Input ;
++----------------+---------+------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                 ;
++----------------+---------+------------------------------------------------------+
+; phaseAvg       ; 1100100 ; Unsigned Binary                                      ;
++----------------+---------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT1 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT2 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT3 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|Controller:Process|Number_Division:DUT4 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2 ;
++----------------+--------+----------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                     ;
++----------------+--------+----------------------------------------------------------+
+; xtalSpd        ; 101101 ; Unsigned Binary                                          ;
++----------------+--------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalOne ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:intFinalTwo ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalOne ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalTwo ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_82m ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_5am ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: User_Input:Unit2|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_82m ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalTwo"                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Res[31..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|TargetController:Process2|Number_Division:fltFinalOne"                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Res[31..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|Controller:Process|Number_Division:DUT4" ;
++----------+-------+----------+---------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                           ;
++----------+-------+----------+---------------------------------------------------+
+; B[6..5]  ; Input ; Info     ; Stuck at VCC                                      ;
+; B[31..7] ; Input ; Info     ; Stuck at GND                                      ;
+; B[4..3]  ; Input ; Info     ; Stuck at GND                                      ;
+; B[1..0]  ; Input ; Info     ; Stuck at GND                                      ;
+; B[2]     ; Input ; Info     ; Stuck at VCC                                      ;
++----------+-------+----------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|Controller:Process|Number_Division:DUT3" ;
++----------+-------+----------+---------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                           ;
++----------+-------+----------+---------------------------------------------------+
+; B[6..5]  ; Input ; Info     ; Stuck at VCC                                      ;
+; B[31..7] ; Input ; Info     ; Stuck at GND                                      ;
+; B[4..3]  ; Input ; Info     ; Stuck at GND                                      ;
+; B[1..0]  ; Input ; Info     ; Stuck at GND                                      ;
+; B[2]     ; Input ; Info     ; Stuck at VCC                                      ;
++----------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|DFF1:unit0" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; D    ; Input ; Info     ; Stuck at VCC                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0"                                          ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Q_bar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "User_Input:Unit2|Decoder:Unit2"                                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SW   ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "User_Input:Unit2|Decoder:Unit1"                                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SW   ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 349                         ;
+;     CLR               ; 1                           ;
+;     ENA CLR           ; 94                          ;
+;     ENA CLR SCLR      ; 50                          ;
+;     ENA SCLR          ; 50                          ;
+;     ENA SCLR SLD      ; 14                          ;
+;     SCLR              ; 94                          ;
+;     plain             ; 46                          ;
+; arriav_io_obuf        ; 36                          ;
+; arriav_lcell_comb     ; 16989                       ;
+;     arith             ; 15559                       ;
+;         0 data inputs ; 270                         ;
+;         1 data inputs ; 1915                        ;
+;         2 data inputs ; 6125                        ;
+;         3 data inputs ; 1515                        ;
+;         4 data inputs ; 5714                        ;
+;         5 data inputs ; 20                          ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 1141                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 78                          ;
+;         3 data inputs ; 753                         ;
+;         4 data inputs ; 106                         ;
+;         5 data inputs ; 54                          ;
+;         6 data inputs ; 143                         ;
+;     shared            ; 285                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 232                         ;
+;         2 data inputs ; 48                          ;
+; arriav_mac            ; 20                          ;
+; boundary_port         ; 68                          ;
+;                       ;                             ;
+; Max LUT depth         ; 139.60                      ;
+; Average LUT depth     ; 126.31                      ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:10     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Thu May 18 15:36:06 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ADPLL_5_3 -c ADPLL_5_3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 2 entities, in source file targetcontroller.sv
+    Info (12023): Found entity 1: TargetController File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/TargetController.sv Line: 14
+    Info (12023): Found entity 2: TargetCont_Tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/TargetController.sv Line: 61
+Info (12021): Found 1 design units, including 1 entities, in source file freq_ratioa.sv
+    Info (12023): Found entity 1: Freq_ratioA File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Freq_ratioA.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file user_input.v
+    Info (12023): Found entity 1: User_Input File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 6
+Info (12021): Found 2 design units, including 2 entities, in source file ringoscillator.sv
+    Info (12023): Found entity 1: ringOscillator File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ringOscillator.sv Line: 11
+    Info (12023): Found entity 2: ringOscillator_tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ringOscillator.sv Line: 29
+Info (12021): Found 2 design units, including 2 entities, in source file ring.sv
+    Info (12023): Found entity 1: Ring File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv Line: 3
+    Info (12023): Found entity 2: Ring_tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv Line: 29
+Info (12021): Found 2 design units, including 2 entities, in source file oneshot.sv
+    Info (12023): Found entity 1: oneShot File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv Line: 3
+    Info (12023): Found entity 2: oneShot_tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv Line: 23
+Info (12021): Found 2 design units, including 2 entities, in source file number_division.sv
+    Info (12023): Found entity 1: Number_Division File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Number_Division.sv Line: 4
+    Info (12023): Found entity 2: tb_division File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Number_Division.sv Line: 40
+Info (12021): Found 2 design units, including 2 entities, in source file multiple_calculator.sv
+    Info (12023): Found entity 1: Multiple_Calculator File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Multiple_Calculator.sv Line: 14
+    Info (12023): Found entity 2: Multiple_Calculator_2_Tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Multiple_Calculator.sv Line: 132
+Info (12021): Found 1 design units, including 1 entities, in source file freq_ratio.sv
+    Info (12023): Found entity 1: Freq_ratio File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Freq_ratio.sv Line: 8
+Info (12021): Found 2 design units, including 2 entities, in source file divider.sv
+    Info (12023): Found entity 1: Divider File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Divider.sv Line: 2
+    Info (12023): Found entity 2: Divider_With_Decimal_tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Divider.sv Line: 65
+Info (12021): Found 2 design units, including 2 entities, in source file dff1.sv
+    Info (12023): Found entity 1: DFF1 File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/DFF1.sv Line: 3
+    Info (12023): Found entity 2: DFF1_tb File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/DFF1.sv Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.sv
+    Info (12023): Found entity 1: Decoder File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Decoder.sv Line: 9
+Info (12021): Found 2 design units, including 2 entities, in source file controller.sv
+    Info (12023): Found entity 1: Controller File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 5
+    Info (12023): Found entity 2: Controller_TB File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 45
+Info (12021): Found 2 design units, including 2 entities, in source file apdll.sv
+    Info (12023): Found entity 1: ADPLL File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 10
+    Info (12023): Found entity 2: ADPLL_TB File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 68
+Info (12021): Found 1 design units, including 1 entities, in source file adpll_5_3.v
+    Info (12023): Found entity 1: ADPLL_5_3 File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 6
+Warning (10236): Verilog HDL Implicit Net warning at User_Input.v(59): created implicit net for "CLOCK_1MHz" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 59
+Warning (10236): Verilog HDL Implicit Net warning at Ring.sv(12): created implicit net for "En" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv Line: 12
+Info (12127): Elaborating entity "ADPLL_5_3" for the top level hierarchy
+Info (12128): Elaborating entity "User_Input" for hierarchy "User_Input:Unit2" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 56
+Warning (10036): Verilog HDL or VHDL warning at User_Input.v(59): object "CLOCK_1MHz" assigned a value but never read File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 59
+Warning (10230): Verilog HDL assignment warning at User_Input.v(64): truncated value with size 9 to match size of target (8) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 64
+Warning (10230): Verilog HDL assignment warning at User_Input.v(71): truncated value with size 32 to match size of target (9) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 71
+Warning (10230): Verilog HDL assignment warning at User_Input.v(75): truncated value with size 32 to match size of target (9) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 75
+Warning (10230): Verilog HDL assignment warning at User_Input.v(87): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 87
+Warning (10230): Verilog HDL assignment warning at User_Input.v(91): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 91
+Warning (10230): Verilog HDL assignment warning at User_Input.v(96): truncated value with size 9 to match size of target (8) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 96
+Warning (10230): Verilog HDL assignment warning at User_Input.v(103): truncated value with size 32 to match size of target (9) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 103
+Warning (10230): Verilog HDL assignment warning at User_Input.v(107): truncated value with size 32 to match size of target (9) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 107
+Warning (10230): Verilog HDL assignment warning at User_Input.v(120): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 120
+Warning (10230): Verilog HDL assignment warning at User_Input.v(124): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 124
+Info (12128): Elaborating entity "Decoder" for hierarchy "User_Input:Unit2|Decoder:Unit1" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 42
+Info (12128): Elaborating entity "ADPLL" for hierarchy "ADPLL:Unit1" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 58
+Info (12128): Elaborating entity "Ring" for hierarchy "ADPLL:Unit1|Ring:RingGenerate" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 25
+Info (12128): Elaborating entity "oneShot" for hierarchy "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv Line: 17
+Info (12128): Elaborating entity "DFF1" for hierarchy "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|DFF1:unit0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv Line: 16
+Info (12128): Elaborating entity "ringOscillator" for hierarchy "ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Ring.sv Line: 23
+Info (12128): Elaborating entity "Freq_ratioA" for hierarchy "ADPLL:Unit1|Freq_ratioA:Crystal_Input" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 27
+Info (12128): Elaborating entity "Controller" for hierarchy "ADPLL:Unit1|Controller:Process" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at Controller.sv(29): truncated value with size 32 to match size of target (25) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 29
+Warning (10230): Verilog HDL assignment warning at Controller.sv(30): truncated value with size 32 to match size of target (25) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at Controller.sv(35): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 35
+Warning (10230): Verilog HDL assignment warning at Controller.sv(36): truncated value with size 32 to match size of target (7) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 36
+Info (12128): Elaborating entity "Number_Division" for hierarchy "ADPLL:Unit1|Controller:Process|Number_Division:DUT1" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Controller.sv Line: 23
+Info (12128): Elaborating entity "TargetController" for hierarchy "ADPLL:Unit1|TargetController:Process2" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at TargetController.sv(52): truncated value with size 26 to match size of target (25) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/TargetController.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at TargetController.sv(54): truncated value with size 26 to match size of target (25) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/TargetController.sv Line: 54
+Info (12128): Elaborating entity "Divider" for hierarchy "ADPLL:Unit1|Divider:first" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/APDLL.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at Divider.sv(26): truncated value with size 32 to match size of target (16) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Divider.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at Divider.sv(43): truncated value with size 32 to match size of target (16) File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/Divider.sv Line: 43
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "User_Input:Unit2|Mod0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "User_Input:Unit2|Div0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "User_Input:Unit2|Mod1" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 43
+Info (12130): Elaborated megafunction instantiation "User_Input:Unit2|lpm_divide:Mod0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 42
+Info (12133): Instantiated megafunction "User_Input:Unit2|lpm_divide:Mod0" with the following parameter: File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_82m.tdf
+    Info (12023): Found entity 1: lpm_divide_82m File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/lpm_divide_82m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/sign_div_unsign_bkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_sse.tdf
+    Info (12023): Found entity 1: alt_u_div_sse File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/alt_u_div_sse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "User_Input:Unit2|lpm_divide:Div0" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 43
+Info (12133): Instantiated megafunction "User_Input:Unit2|lpm_divide:Div0" with the following parameter: File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/User_Input.v Line: 43
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5am.tdf
+    Info (12023): Found entity 1: lpm_divide_5am File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/db/lpm_divide_5am.tdf Line: 25
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[4]" and its non-tri-state driver. File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[19]" and its non-tri-state driver. File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[21]" and its non-tri-state driver. File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+Info (13000): Registers with preset signals will power-up high File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/DFF1.sv Line: 6
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO[4]~synth" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13010): Node "GPIO[19]~synth" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+    Warning (13010): Node "GPIO[21]~synth" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1|inverter[2]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ringOscillator.sv Line: 16
+    Info (17048): Logic cell "ADPLL:Unit1|Ring:RingGenerate|ringOscillator:DUT1|inverter[1]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ringOscillator.sv Line: 16
+    Info (17048): Logic cell "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|Reset" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv Line: 7
+    Info (17048): Logic cell "ADPLL:Unit1|Ring:RingGenerate|oneShot:DUT0|X" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/oneShot.sv Line: 7
+Info (144001): Generated suppressed messages file C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 12
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 12
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.v Line: 15
+Info (21057): Implemented 17172 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 17084 logic cells
+    Info (21062): Implemented 20 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4974 megabytes
+    Info: Processing ended: Thu May 18 15:36:34 2023
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:20
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/pjspi/Downloads/ADPLL_7_4/ADPLL_7_4/ADPLL_7_3/ADPLL5_7/ADPLL_5_4/ADPLL_5_3.map.smsg.
+
+

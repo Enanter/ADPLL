@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Apr 13 16:36:22 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : ADPLL_5_3
+Top-level Entity Name : ADPLL_5_3
+Family : Cyclone V
+Device : 5CGXFC7D6F27C7
+Timing Models : Final
+Logic utilization (in ALMs) : 4,338 / 56,480 ( 8 % )
+Total registers : 107
+Total pins : 41 / 378 ( 11 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 7,024,640 ( 0 % )
+Total RAM Blocks : 0 / 686 ( 0 % )
+Total DSP Blocks : 6 / 156 ( 4 % )
+Total HSSI RX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
+Total HSSI TX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 9 ( 0 % )
+Total PLLs : 0 / 16 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

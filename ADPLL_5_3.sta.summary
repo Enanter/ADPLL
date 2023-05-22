@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50_B5B'
+Slack : 13.020
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50_B5B'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50_B5B'
+Slack : 17.986
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50_B5B'
+Slack : 1.230
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.890
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50_B5B'
+Slack : 13.055
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50_B5B'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50_B5B'
+Slack : 17.991
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50_B5B'
+Slack : 1.216
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.812
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50_B5B'
+Slack : 15.957
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50_B5B'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50_B5B'
+Slack : 18.981
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50_B5B'
+Slack : 0.541
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.786
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50_B5B'
+Slack : 16.406
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50_B5B'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50_B5B'
+Slack : 19.036
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50_B5B'
+Slack : 0.503
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50_B5B'
+Slack : 8.740
+TNS   : 0.000
+
+------------------------------------------------------------

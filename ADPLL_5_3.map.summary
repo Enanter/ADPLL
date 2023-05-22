@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Thu May 18 15:36:34 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : ADPLL_5_3
+Top-level Entity Name : ADPLL_5_3
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 349
+Total pins : 68
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 20
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

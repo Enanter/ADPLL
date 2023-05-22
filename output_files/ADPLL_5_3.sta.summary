@@ -1,0 +1,165 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'volt_0'
+Slack : -138.777
+TNS   : -9231.922
+
+Type  : Slow 1100mV 85C Model Setup 'F_input'
+Slack : -4.735
+TNS   : -143.543
+
+Type  : Slow 1100mV 85C Model Hold 'volt_0'
+Slack : 0.331
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'F_input'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'volt_0'
+Slack : -2.504
+TNS   : -79.244
+
+Type  : Slow 1100mV 85C Model Recovery 'F_input'
+Slack : -1.933
+TNS   : -14.381
+
+Type  : Slow 1100mV 85C Model Removal 'volt_0'
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'F_input'
+Slack : 1.066
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'F_input'
+Slack : -2.225
+TNS   : -82.661
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'volt_0'
+Slack : -0.538
+TNS   : -84.095
+
+Type  : Slow 1100mV 0C Model Setup 'volt_0'
+Slack : -144.570
+TNS   : -9601.008
+
+Type  : Slow 1100mV 0C Model Setup 'F_input'
+Slack : -4.164
+TNS   : -127.806
+
+Type  : Slow 1100mV 0C Model Hold 'volt_0'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'F_input'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'volt_0'
+Slack : -2.579
+TNS   : -82.428
+
+Type  : Slow 1100mV 0C Model Recovery 'F_input'
+Slack : -1.786
+TNS   : -13.261
+
+Type  : Slow 1100mV 0C Model Removal 'volt_0'
+Slack : 0.753
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'F_input'
+Slack : 0.997
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'F_input'
+Slack : -2.225
+TNS   : -82.701
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'volt_0'
+Slack : -0.538
+TNS   : -83.925
+
+Type  : Fast 1100mV 85C Model Setup 'volt_0'
+Slack : -65.121
+TNS   : -4337.055
+
+Type  : Fast 1100mV 85C Model Setup 'F_input'
+Slack : -2.902
+TNS   : -82.013
+
+Type  : Fast 1100mV 85C Model Hold 'volt_0'
+Slack : 0.088
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'F_input'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'volt_0'
+Slack : -0.909
+TNS   : -27.136
+
+Type  : Fast 1100mV 85C Model Recovery 'F_input'
+Slack : -0.625
+TNS   : -4.367
+
+Type  : Fast 1100mV 85C Model Removal 'volt_0'
+Slack : 0.081
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'F_input'
+Slack : 0.532
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'F_input'
+Slack : -1.702
+TNS   : -58.725
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'volt_0'
+Slack : -0.362
+TNS   : -32.352
+
+Type  : Fast 1100mV 0C Model Setup 'volt_0'
+Slack : -60.462
+TNS   : -4023.672
+
+Type  : Fast 1100mV 0C Model Setup 'F_input'
+Slack : -2.480
+TNS   : -70.061
+
+Type  : Fast 1100mV 0C Model Hold 'volt_0'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'F_input'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'volt_0'
+Slack : -0.786
+TNS   : -23.796
+
+Type  : Fast 1100mV 0C Model Recovery 'F_input'
+Slack : -0.445
+TNS   : -3.111
+
+Type  : Fast 1100mV 0C Model Removal 'volt_0'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'F_input'
+Slack : 0.475
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'F_input'
+Slack : -1.702
+TNS   : -58.725
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'volt_0'
+Slack : -0.379
+TNS   : -35.423
+
+------------------------------------------------------------

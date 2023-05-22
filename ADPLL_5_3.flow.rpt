@@ -1,0 +1,127 @@
+Flow report for ADPLL_5_3
+Thu May 18 15:41:13 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Thu May 18 15:40:54 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; ADPLL_5_3                                   ;
+; Top-level Entity Name           ; ADPLL_5_3                                   ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CGXFC5C6F27C7                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 9,782 / 29,080 ( 34 % )                     ;
+; Total registers                 ; 273                                         ;
+; Total pins                      ; 68 / 364 ( 19 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 4,567,040 ( 0 % )                       ;
+; Total DSP Blocks                ; 20 / 150 ( 13 % )                           ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 12 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 05/18/2023 15:36:08 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; ADPLL_5_3           ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 86678735391949.168444936708996         ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 4974 MB             ; 00:00:18                           ;
+; Fitter               ; 00:04:01     ; 1.4                     ; 7425 MB             ; 00:15:15                           ;
+; Assembler            ; 00:00:13     ; 1.0                     ; 4968 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:18     ; 5.7                     ; 5465 MB             ; 00:01:19                           ;
+; Total                ; 00:04:58     ; --                      ; --                  ; 00:17:01                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; HP               ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; HP               ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; HP               ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; HP               ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off ADPLL_5_3 -c ADPLL_5_3
+quartus_fit --read_settings_files=off --write_settings_files=off ADPLL_5_3 -c ADPLL_5_3
+quartus_asm --read_settings_files=off --write_settings_files=off ADPLL_5_3 -c ADPLL_5_3
+quartus_sta ADPLL_5_3 -c ADPLL_5_3
+
+
+

@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Multiple_Calculator.sv(37): always construct contains both blocking and non-blocking assignments File: C:/Users/uwtpatron/Desktop/ADPLL_5_3/Multiple_Calculator.sv Line: 37
+Warning (10268): Verilog HDL information at Divider.sv(14): always construct contains both blocking and non-blocking assignments File: C:/Users/uwtpatron/Desktop/ADPLL_5_3/Divider.sv Line: 14
